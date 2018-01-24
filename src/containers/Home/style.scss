@@ -1,0 +1,18 @@
+.rwt__tablist {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    .rwt__tab {
+        padding: 5px 10px;
+        margin: 3px;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        &[aria-selected=true] {
+            background-color: #007bff;
+            border-color: #007bff;
+            &:after {
+                height: 0 !important;
+            }
+        }
+    }
+}

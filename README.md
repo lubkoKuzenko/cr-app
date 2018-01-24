@@ -3,5 +3,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Table of Contents
 
 - REACT 16
-- Bootstrap 4  
-- 
+- Bootstrap 4 - https://reactstrap.github.io/
+- REACT Router
