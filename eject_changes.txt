@@ -1,0 +1,66 @@
+Copying files into /Users/l.kuzenko/pet/cr-app
+  Adding /config/env.js to the project
+  Adding /config/paths.js to the project
+  Adding /config/polyfills.js to the project
+  Adding /config/webpack.config.dev.js to the project
+  Adding /config/webpack.config.prod.js to the project
+  Adding /config/webpackDevServer.config.js to the project
+  Adding /config/jest/cssTransform.js to the project
+  Adding /config/jest/fileTransform.js to the project
+  Adding /scripts/build.js to the project
+  Adding /scripts/start.js to the project
+  Adding /scripts/test.js to the project
+
+Updating the dependencies
+  Removing react-scripts from dependencies
+  Adding autoprefixer to dependencies
+  Adding babel-core to dependencies
+  Adding babel-eslint to dependencies
+  Adding babel-jest to dependencies
+  Adding babel-loader to dependencies
+  Adding babel-preset-react-app to dependencies
+  Adding babel-runtime to dependencies
+  Adding case-sensitive-paths-webpack-plugin to dependencies
+  Adding chalk to dependencies
+  Adding css-loader to dependencies
+  Adding dotenv to dependencies
+  Adding dotenv-expand to dependencies
+  Adding eslint to dependencies
+  Adding eslint-config-react-app to dependencies
+  Adding eslint-loader to dependencies
+  Adding eslint-plugin-flowtype to dependencies
+  Adding eslint-plugin-import to dependencies
+  Adding eslint-plugin-jsx-a11y to dependencies
+  Adding eslint-plugin-react to dependencies
+  Adding extract-text-webpack-plugin to dependencies
+  Adding file-loader to dependencies
+  Adding fs-extra to dependencies
+  Adding html-webpack-plugin to dependencies
+  Adding jest to dependencies
+  Adding object-assign to dependencies
+  Adding postcss-flexbugs-fixes to dependencies
+  Adding postcss-loader to dependencies
+  Adding promise to dependencies
+  Adding raf to dependencies
+  Adding react-dev-utils to dependencies
+  Adding style-loader to dependencies
+  Adding sw-precache-webpack-plugin to dependencies
+  Adding url-loader to dependencies
+  Adding webpack to dependencies
+  Adding webpack-dev-server to dependencies
+  Adding webpack-manifest-plugin to dependencies
+  Adding whatwg-fetch to dependencies
+
+Updating the scripts
+  Replacing "react-scripts start" with "node scripts/start.js"
+  Replacing "react-scripts build" with "node scripts/build.js"
+  Replacing "react-scripts test" with "node scripts/test.js"
+
+Configuring package.json
+  Adding Jest configuration
+  Adding Babel preset
+  Adding ESLint configuration
+
+Running npm install...
+added 1 package and updated 1 package in 7.888s
+Ejected successfully!

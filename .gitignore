@@ -1,3 +1,5 @@
+src/**/*.css
+
 /dist
 /node_modules
 npm-debug.log*
