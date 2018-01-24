@@ -91,12 +91,10 @@
       "node"
     ]
   },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
-  },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "babel-plugin-react-html-attrs": "^2.1.0"
   }
 }

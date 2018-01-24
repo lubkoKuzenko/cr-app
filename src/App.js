@@ -30,16 +30,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div class="App">
         <p>Somewhere in here is a <a href="#" id="TooltipExample">tooltip</a>.</p>
         <Tooltip placement="right" isOpen={this.state.tooltipOpen} target="TooltipExample" toggle={this.togglet}>
           Hello world!
         </Tooltip>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+        <header class="App-header">
+          <img src={logo} class="App-logo" alt="logo" />
+          <h1 class="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
+        <p class="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <div>
@@ -53,7 +53,7 @@ class App extends Component {
           </div>
         <div>
           <Button color="danger" onClick={this.togglem}>Modal</Button>
-          <Modal isOpen={this.state.modal} toggle={this.togglem} className={this.props.className}>
+          <Modal isOpen={this.state.modal} toggle={this.togglem} class={this.props.className}>
             <ModalHeader toggle={this.togglem}>Modal title</ModalHeader>
             <ModalBody>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
