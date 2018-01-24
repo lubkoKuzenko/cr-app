@@ -28,6 +28,8 @@
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "node-sass-chokidar": "0.0.3",
+    "normalize.css": "^7.0.0",
+    "npm-run-all": "^4.1.2",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
@@ -47,12 +49,10 @@
   "scripts": {
     "build-scss": "node-sass-chokidar src/ -o src/",
     "watch-scss": "npm run build-scss && node-sass-chokidar src/ -o src/ --watch --recursive",
-
     "start-js": "node scripts/start.js",
     "start": "npm-run-all -p watch-scss start-js",
     "build-js": "node scripts/build.js",
     "build": "npm-run-all build-scss build-js",
-
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
