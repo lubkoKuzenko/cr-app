@@ -1,6 +1,6 @@
 import decode from 'jwt-decode'
-export const LOG_IN = 'LOG_IN';
-export const LOG_OUT = 'LOG_OUT';
+
+import { LOG_IN, LOG_OUT } from '../actions.const'
 
 export const login = (values) => dispatch => {
   setTimeout(() => {

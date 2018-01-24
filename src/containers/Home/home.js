@@ -6,7 +6,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Tabs, Tab, TabPanel, TabList } from 'react-web-tabs';
-import * as stackActions from '../../store/actions'
+import * as stackActions from '../../store'
 import { Loader } from '../../components'
 
 class Home extends Component {

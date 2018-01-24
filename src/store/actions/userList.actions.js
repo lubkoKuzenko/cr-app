@@ -1,7 +1,6 @@
 import Http from '../../http.service'
 
-export const SAVE_USERS = 'SAVE_USERS';
-export const ACTIVE_USER = 'ACTIVE_USER';
+import { SAVE_USERS, ACTIVE_USER } from '../actions.const'
 
 // async action
 export const getUsers = () => dispatch => {

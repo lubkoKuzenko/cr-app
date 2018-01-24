@@ -1,5 +1,5 @@
 import { todos } from '../../containers/DevelopmentPlan/todos.const'
-export const TODOS = 'TODOS'
+import { TODOS } from '../actions.const'
 
 export const initTodoList = () => dispatch => {
   setTimeout(()=>{

@@ -1,8 +1,8 @@
-import { SAVE_USERS } from './../actions'
+import { SAVE_USERS } from '../actions.const'
 
 const initialState = null
 
-const userlist = (state = initialState, action) => {
+const userlistReducer = (state = initialState, action) => {
   switch (action.type) {
   case SAVE_USERS:
     return {
@@ -14,4 +14,4 @@ const userlist = (state = initialState, action) => {
   }
 }
 
-export default userlist
+export default userlistReducer

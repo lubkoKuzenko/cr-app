@@ -1,4 +1,4 @@
-import { TODOS } from './../actions'
+import { TODOS } from '../actions.const'
 
 const initialState = {}
 

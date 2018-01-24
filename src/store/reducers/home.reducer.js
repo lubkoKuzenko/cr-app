@@ -1,4 +1,4 @@
-import { STACK } from './../actions'
+import { STACK } from '../actions.const'
 
 const initialState = {}
 

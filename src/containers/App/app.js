@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import { Footer, Header } from '../../components'
 import { Login, Registration } from '../'
 import { routes } from "../../routes"
-import store from '../../store/store'
+import { store } from '../../store'
 
 export default class App extends Component {
   render() {

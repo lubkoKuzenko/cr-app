@@ -1,5 +1,5 @@
 import { stack } from '../../containers/Home/stack.const'
-export const STACK = 'STACK'
+import { STACK } from '../actions.const'
 
 export const initStack = () => dispatch => {
   setTimeout(()=>{
