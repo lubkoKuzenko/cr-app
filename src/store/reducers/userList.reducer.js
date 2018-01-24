@@ -1,4 +1,4 @@
-import { SAVE_USERS } from '../userList.actions'
+import { SAVE_USERS } from './../actions'
 
 const initialState = null
 

@@ -1,4 +1,4 @@
-import { stack } from './stack.const'
+import { stack } from '../../containers/Home/stack.const'
 export const STACK = 'STACK'
 
 export const initStack = () => dispatch => {

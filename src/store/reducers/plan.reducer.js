@@ -1,10 +1,10 @@
-import { STACK } from './home.actions'
+import { TODOS } from './../actions'
 
 const initialState = {}
 
-const stackReducer = (state = initialState, action) => {
+const todosReducer = (state = initialState, action) => {
   switch (action.type) {
-  case STACK:
+  case TODOS:
     return {
       ...state,
       ...action.payload
@@ -14,4 +14,4 @@ const stackReducer = (state = initialState, action) => {
   }
 }
 
-export default stackReducer
+export default todosReducer

@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Button } from 'reactstrap';
 import PropTypes from 'prop-types'
-import * as loginActions from '../../containers/Login/login.actions'
+import * as loginActions from '../../store/actions'
 
 class Header extends Component {
   static contextTypes = {

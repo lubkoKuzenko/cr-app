@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import * as _ from 'lodash'
 
-import * as planActions from './plan.actions'
+import * as planActions from '../../store/actions'
 import { Loader } from '../../components'
 
 class DevelopmentPlan extends Component {

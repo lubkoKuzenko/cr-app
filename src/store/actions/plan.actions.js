@@ -1,4 +1,4 @@
-import { todos } from './todos.const'
+import { todos } from '../../containers/DevelopmentPlan/todos.const'
 export const TODOS = 'TODOS'
 
 export const initTodoList = () => dispatch => {

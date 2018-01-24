@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import * as userListActions from './userList.actions'
+import * as userListActions from '../../store/actions'
 import { Loader } from '../../components'
 import ActiveUser from './ActiveUser/activeUser'
 

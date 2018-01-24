@@ -1,4 +1,4 @@
-import { ACTIVE_USER } from '../userList.actions'
+import { ACTIVE_USER } from './../actions'
 
 const initialState = {}
 
