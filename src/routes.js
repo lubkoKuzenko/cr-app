@@ -1,23 +1,30 @@
-import { DevelopmentPlan, Home, About, Userlist, Forms } from './containers';
-import { NotFound } from './components'
+
+import asyncComponent from "./asyncComponent";
+
+const AsyncDevelopmentPlan = asyncComponent(() => import("./containers/DevelopmentPlan/plan"));
+const AsyncHome = asyncComponent(() => import("./containers/Home/home"));
+const AsyncAbout = asyncComponent(() => import("./containers/About/about"));
+const AsyncUserlist = asyncComponent(() => import("./containers/Userlist/userlist"));
+const AsyncForms = asyncComponent(() => import("./containers/Forms/forms"));
+const AsyncNotFound = asyncComponent(() => import("./components/NotFound/notfound.js"));
 
 export const routes = [{
   path: '/',
   exact: true,
-  component: Home,
+  component: AsyncHome,
 }, {
   path: '/about',
-  component: About,
+  component: AsyncAbout,
 }, {
   path: '/plan',
-  component: DevelopmentPlan
+  component: AsyncDevelopmentPlan
 }, {
   path: '/forms',
-  component: Forms,
+  component: AsyncForms,
 }, {
   path: '/userlist',
-  component: Userlist,
+  component: AsyncUserlist,
 }, {
   path: '*',
-  component: NotFound,
+  component: AsyncNotFound,
 }];
