@@ -4,7 +4,8 @@ import { Route, Switch, BrowserRouter as Router, Redirect } from 'react-router-d
 import { Provider } from 'react-redux'
 
 import { Footer, Header } from '../../components'
-import { Login, Registration } from '../'
+import Login from '../Login/login'
+import Registration from '../Registration/registration'
 import { routes } from "../../routes"
 import { store } from '../../store'
 
