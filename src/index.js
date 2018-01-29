@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './containers/App/app'
+import App from './modules/App/app'
 import registerServiceWorker from './registerServiceWorker';
 import { HashRouter } from 'react-router-dom'
 

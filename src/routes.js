@@ -1,11 +1,11 @@
 
 import asyncComponent from "./asyncComponent";
 
-const AsyncDevelopmentPlan = asyncComponent(() => import("./containers/DevelopmentPlan/plan"));
-const AsyncHome = asyncComponent(() => import("./containers/Home/home"));
-const AsyncAbout = asyncComponent(() => import("./containers/About/about"));
-const AsyncUserlist = asyncComponent(() => import("./containers/Userlist/userlist"));
-const AsyncForms = asyncComponent(() => import("./containers/Forms/forms"));
+const AsyncDevelopmentPlan = asyncComponent(() => import("./modules/DevelopmentPlan/plan"));
+const AsyncHome = asyncComponent(() => import("./modules/Home/home"));
+const AsyncAbout = asyncComponent(() => import("./modules/About/about"));
+const AsyncUserlist = asyncComponent(() => import("./modules/Userlist/userlist"));
+const AsyncForms = asyncComponent(() => import("./modules/Forms/forms"));
 const AsyncNotFound = asyncComponent(() => import("./components/NotFound/notfound.js"));
 
 export const routes = [{
