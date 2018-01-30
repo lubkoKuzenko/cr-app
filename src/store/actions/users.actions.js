@@ -33,7 +33,6 @@ export const getUsers = () => dispatch => {
     dispatch(doSomething()),
     dispatch(doSomethingElse())
   ]).then((data) => {
-      console.log(data)
       dispatch({
         type: SAVE_USERS,
         payload: data[0].results

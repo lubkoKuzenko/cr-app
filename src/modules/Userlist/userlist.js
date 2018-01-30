@@ -18,15 +18,16 @@ class Userlist extends Component {
   }
 
   render() {
-    const { userlist, selectUser } = this.props;
-    if (!userlist) {
+    const { users, selectUser } = this.props;
+
+    if (!users.users) {
       return <div><Loader /></div>;
     }
 
     return <div>
       <ul class="list-group">
         {
-          Object.values(userlist).map((user) => {
+          Object.values(users.users).map((user) => {
             return <li key={user.name} class="list-group-item" onClick={() => selectUser(user)}>
               <span>{user.name}</span>
             </li>
@@ -40,7 +41,7 @@ class Userlist extends Component {
 
 export default connect(
   state => ({
-    userlist: state.userlist
+    users: state.users
   }), 
   dispatch => {
     return bindActionCreators({ ...userListActions }, dispatch)

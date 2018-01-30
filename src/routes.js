@@ -25,7 +25,7 @@ export const routes = [{
   path: '/forms',
   component: AsyncForms,
 }, {
-  path: '/userlist',
+  path: '/users',
   component: AsyncUserlist,
 }, {
   path: '*',

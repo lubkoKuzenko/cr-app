@@ -1,5 +1,4 @@
 export { default as todosReducer } from './plan.reducer'
 export { default as stackReducer } from './home.reducer'
 export { default as loginReducer } from './login.reducer'
-export { default as userlistReducer } from './userList.reducer'
-export { default as activeUserReducer } from './activeUser.reducer'
+export { default as usersReducer } from './users.reducer'
