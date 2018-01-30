@@ -1,9 +1,9 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import './style.css'
+import './simpleForm.style.css'
 
 import { Button } from 'reactstrap';
-import { validate } from './validation'
+import { validate } from './loginForm.validation'
 
 const renderField = ({ input, label, type, meta: { touched, error, warning } }) =>
   <div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SimpleForm from './simpleForm/simple'
+import { SimpleForm } from '../../forms'
 
 export default class Forms extends Component {
   submit(values) {
