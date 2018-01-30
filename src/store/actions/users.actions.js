@@ -41,9 +41,9 @@ export const getUsers = () => dispatch => {
 }
 
 // normal action
-export function selectUser(activeUser) {
+export function selectUser(user) {
   return {
     type: ACTIVE_USER,
-    payload: activeUser
+    payload: user
   }
 }
