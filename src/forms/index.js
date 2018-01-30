@@ -1,2 +1,2 @@
-export { default as SimpleForm } from './simpleForm/simpleForm'
-export { default as LoginForm } from './LoginForm/loginForm'
+export * from './simpleForm'
+export * from './LoginForm'
