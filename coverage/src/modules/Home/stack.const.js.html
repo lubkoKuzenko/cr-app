@@ -1,0 +1,1430 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/modules/Home/stack.const.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/modules/Home</a> stack.const.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/1</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const stack = [{
+  name: "HTML",
+  description: `&lt;p&gt;HTML is the standard markup language for creating Web pages.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;HTML stands for Hyper Text Markup Language&lt;/li&gt;
+    &lt;li&gt;HTML describes the structure of Web pages using markup&lt;/li&gt;
+    &lt;li&gt;HTML elements are the building blocks of HTML pages&lt;/li&gt;
+    &lt;li&gt;HTML elements are represented by tags&lt;/li&gt;
+    &lt;li&gt;HTML tags label pieces of content such as "heading", "paragraph", "table", and so on&lt;/li&gt;
+    &lt;li&gt;Browsers do not display the HTML tags, but use them to render the content of the page&lt;/li&gt;
+  &lt;/ul&gt;`
+},{
+  name: "CSS",
+  description: `
+  &lt;ul&gt;
+    &lt;li&gt;&lt;b&gt;CSS&lt;/b&gt; stands for &lt;b&gt;C&lt;/b&gt;ascading &lt;b&gt;S&lt;/b&gt;tyle &lt;b&gt;S&lt;/b&gt;heets&lt;/li&gt;
+    &lt;li&gt;CSS describes &lt;strong&gt;how HTML elements are to be displayed on screen,  
+    paper, or in other media&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;CSS &lt;strong&gt;saves a lot of work&lt;/strong&gt;. It can control the layout of 
+    multiple web pages all at once&lt;/li&gt;
+    &lt;li&gt;External stylesheets are stored in &lt;b&gt;CSS files&lt;/b&gt;&lt;/li&gt;
+  &lt;/ul&gt;`
+},{
+  name: 'HTML 5',
+  description: `&lt;div class="post-text" itemprop="text"&gt;
+  &lt;p&gt;HTML5 has several goals which differentiate it from HTML4.&lt;/p&gt;
+  
+  &lt;h1&gt;Consistency in Handling Malformed Documents&lt;/h1&gt;
+  
+  &lt;p&gt;The primary one is &lt;em&gt;consistent, defined error handling&lt;/em&gt;.  As you know, HTML purposely supports 'tag soup', or the ability to write malformed code and have it corrected into a valid document.  The problem is that the rules for doing this aren't written down anywhere.  When a new browser vendor wants to enter the market, they just have to test malformed documents in various browsers (especially IE) and reverse-engineer their error handling.  If they don't, then many pages won't display correctly (estimates place roughly 90% of pages on the net as being at least somewhat malformed).&lt;/p&gt;
+  
+  &lt;p&gt;So, HTML5 is attempting to discover and codify this error handling, so that browser developers can all standardize and greatly reduce the time and money required to display things consistently.  As well, long in the future after HTML has died as a document format, historians may still want to read our documents, and having a completely defined parsing algorithm will greatly aid this.&lt;/p&gt;
+  
+  &lt;h1&gt;Better Web Application Features&lt;/h1&gt;
+  
+  &lt;p&gt;The secondary goal of HTML5 is to develop the ability of the browser to be an application platform, via HTML, CSS, and Javascript.  Many elements have been added directly to the language that are currently (in HTML4) Flash or JS-based hacks, such as &lt;code&gt;&amp;lt;canvas&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;video&amp;gt;&lt;/code&gt;, and &lt;code&gt;&amp;lt;audio&amp;gt;&lt;/code&gt;.  Useful things such as Local Storage (a js-accessible browser-built-in key-value database, for storing information beyond what cookies can hold), new input types such as date for which the browser can expose easy user interface (so that we don't have to use our js-based calendar date-pickers), and browser-supported form validation will make developing web applications much simpler for the developers, and make them much faster for the users (since many things will be supported natively, rather than hacked in via javascript).&lt;/p&gt;
+  
+  &lt;h1&gt;Improved Element Semantics&lt;/h1&gt;
+  
+  &lt;p&gt;There are many other smaller efforts taking place in HTML5, such as better-defined semantic roles for existing elements (&lt;code&gt;&amp;lt;strong&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;em&amp;gt;&lt;/code&gt; now actually mean something different, and even &lt;code&gt;&amp;lt;b&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;i&amp;gt;&lt;/code&gt; have vague semantics that should work well when parsing legacy documents) and adding new elements with useful semantics - &lt;code&gt;&amp;lt;article&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;section&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;header&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;aside&amp;gt;&lt;/code&gt;, and &lt;code&gt;&amp;lt;nav&amp;gt;&lt;/code&gt; should replace the majority of &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;s used on a web page, making your pages a bit more semantic, but more importantly, &lt;em&gt;easier to read&lt;/em&gt;.  No more painful scanning to see just what that random &lt;code&gt;&amp;lt;/div&amp;gt;&lt;/code&gt; is closing - instead you'll have an obvious &lt;code&gt;&amp;lt;/header&amp;gt;&lt;/code&gt;, or &lt;code&gt;&amp;lt;/article&amp;gt;&lt;/code&gt;, making the structure of your document much more intuitive.&lt;/p&gt;
+      &lt;/div&gt;`
+},{
+  name: 'CSS 3',
+  description: `&lt;span class="rendered_qtext"&gt;Unlike the previous versions of the CSS specification, CSS3 has broken down the specification into smaller "modules". Each module either describes the newer capabilities or changes to the previous specification. One key point here is that backwards compatibility is preserved.&lt;br&gt;As a result of breaking down the specification into smaller pieces, each module is in a distinct state of readiness.&lt;br&gt;There are over 50 CSS modules that are in various states of readiness.&lt;br&gt;For the purpose of providing a quick insight, I am listing the modules here.&lt;br&gt;&lt;ol&gt;&lt;li&gt;Media Queries - enhancement of @media rules and "media" HTML markup element.&lt;/li&gt;&lt;li&gt;Selectors Level 3 - describes the element selectors used in CSS&lt;/li&gt;&lt;li&gt;Grid template layout - describes new way to position elements using constraints on their alignment to each other and on their flexibility.&lt;/li&gt;&lt;li&gt;Aural Style sheets -&lt;/li&gt;&lt;li&gt;Backgrounds and borders - describes background colors and images and the style of borders.&lt;/li&gt;&lt;li&gt;Basic user interface - describes styling for web pages&lt;/li&gt;&lt;li&gt;Basic Box model - describes the layout of block-level content in normal flow.&lt;/li&gt;&lt;li&gt;Extended Box model - provides extra control over positioning of floats and the size of boxes.&lt;/li&gt;&lt;li&gt;Marquee - describes the marquee effect.&lt;/li&gt;&lt;li&gt;Cascading and inheritance - describes how values are assigned to properties.&lt;/li&gt;&lt;li&gt;Color - describes color-relates aspects of CSS.&lt;/li&gt;&lt;li&gt;Fonts - describes fonts and font adjustments.&lt;/li&gt;&lt;li&gt;Generated Content for paged media&lt;/li&gt;&lt;li&gt;Page floats - contains properties to float elements to the top, bottom or side of a page in paginated renderings.&lt;/li&gt;&lt;li&gt;Generated and replaced content - defines how to put content before, after, or in place of an element.&lt;/li&gt;&lt;li&gt;Hyperlink - describes styling for hyperlinks.&lt;/li&gt;&lt;li&gt;Line layout - describes alignment of text and other boxes within a line.&lt;/li&gt;&lt;li&gt;Lists - contains properties for styling lists.&lt;/li&gt;&lt;li&gt;Multi-column layout - describes properties to flow content into flexibly-defined columns.&lt;/li&gt;&lt;li&gt;Object model - describes programming model.&lt;/li&gt;&lt;li&gt;CSSOM View model - describes way to inspect and manipulate the view information of a document.&lt;/li&gt;&lt;li&gt;Paged media&lt;/li&gt;&lt;li&gt;Positioned layout level 3 - describes ways in CSS to layout parts of a document.&lt;/li&gt;&lt;li&gt;Presentation levels - describes ways to step forward/backward through multiple renderings of the same document.&lt;/li&gt;&lt;li&gt;Ruby - describes properties to manipulate the positions of "ruby" (small annotations on top of or next to words).&lt;/li&gt;&lt;li&gt;Grid Layout - describes how to setup a flexible design grid for an element&lt;/li&gt;&lt;li&gt;Regions - describes what can be done with regions&lt;/li&gt;&lt;li&gt;Speech - contains properties to specify how a document is rendered by a speech synthesizer.&lt;/li&gt;&lt;li&gt;Tables Module - describes the layout of tables.&lt;/li&gt;&lt;li&gt;Text - describes the text related properties.&lt;/li&gt;&lt;li&gt;Writing Modes - describes the properties that control text direction&lt;/li&gt;&lt;li&gt;Line grid - describes text where each symbol in a line is aligned to an invisible grid.&lt;/li&gt;&lt;li&gt;Values and units&lt;/li&gt;&lt;li&gt;Behavioral extensions to CSS - defines the "binding" property for XBL.&lt;/li&gt;&lt;li&gt;Flexible Box layout Level 3 - defines the "flex' and "inner-flex" keywords for the display propert&lt;/li&gt;&lt;li&gt;Image values and replaced content - defines how properties can refer to images by URL.&lt;/li&gt;&lt;li&gt;Fragmentation Module - describes properties to force or avoid page and column breaks.&lt;/li&gt;&lt;li&gt;Transforms - defines 2D and 3D transforms.&lt;/li&gt;&lt;li&gt;Transitions - defines a property to animate the transitions between pseudo-classes.&lt;/li&gt;&lt;li&gt;Animations - specifies which properties change their values during an animation.&lt;/li&gt;&lt;li&gt;Mobile profile -&lt;/li&gt;&lt;li&gt;TV profile&lt;/li&gt;&lt;li&gt;Conditional Rules - defines a number of ways to make style rules depend on factors outside the document, such as output media, the capabilities of the user agent, and the URL of the document&lt;/li&gt;&lt;li&gt;Device Adaptation&lt;/li&gt;&lt;li&gt;Shapes - defines properties to assign a shape to a CSS box, so that the lengths of the lines inside the box are determined by that shape.&lt;/li&gt;&lt;li&gt;Compositing and blending&lt;/li&gt;&lt;li&gt;Filter effects - defines graphic filters that can be applied to an element before it has been composited.&lt;/li&gt;&lt;li&gt;Masking - provides ways to partially or fully hide portions of visual elements.&lt;/li&gt;&lt;li&gt;Box alignment module - defines properties for alignments.&lt;/li&gt;&lt;li&gt;Text decoration - defines properties that control the style and position of decorations around text.&lt;/li&gt;&lt;li&gt;Intrinsic and extrinsic sizing - defines keywords for use on the width and height properties.&lt;/li&gt;&lt;li&gt;Counter Styles - defines rules to support custom numbering styles.&lt;/li&gt;&lt;li&gt;Cascading variables - allows arbitrary data to be associated with elements.&lt;/li&gt;&lt;li&gt;Overflow module - defines property which specifies how text is treated that is too wide or too tall for its box.&lt;/li&gt;&lt;li&gt;Display module&lt;/li&gt;&lt;li&gt;Font loading - defines methods to allow a script to explicitly load a font.&lt;/li&gt;&lt;/ol&gt;&lt;/span&gt;`
+},{
+  name: 'SCSS',
+  description: `SCSS is an extension of CSS that adds power and elegance to the basic language. It allows you to use variables, nested rules, mixins, inline imports, and more, all with a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized, and get small stylesheets up and running quickly, particularly with the help of the Compass style library.&lt;h2 id="Features"&gt;Features&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;Fully CSS-compatible&lt;/li&gt; &lt;li&gt;Language extensions such as variables, nesting, and mixins&lt;/li&gt; &lt;li&gt;Many &lt;span class="object_link"&gt;&lt;a href="Sass/Script/Functions.html" title="Sass::Script::Functions (module)"&gt;useful functions&lt;/a&gt;&lt;/span&gt; for manipulating colors and other values&lt;/li&gt; &lt;li&gt;Advanced features like &lt;a href="#control_directives__expressions"&gt;control directives&lt;/a&gt; for libraries&lt;/li&gt; &lt;li&gt;Well-formatted, customizable output&lt;/li&gt; &lt;/ul&gt;`
+},{
+  name: 'LESS',
+  description: `&lt;p&gt;Less is a CSS pre-processor, meaning that it extends the CSS language, adding features that allow variables, mixins, functions and many other techniques that allow you to make CSS that is more maintainable, themeable and extendable.&lt;/p&gt;&lt;p&gt;Less runs inside Node, in the browser and inside Rhino. There are also many 3rd party tools that allow you to compile your files and watch for changes. The quickest place for first experiments with Less is our &lt;a href="http://lesscss.org/less-preview/"&gt;online editor&lt;/a&gt;.&lt;/p&gt;`
+},{
+  name: 'PostCSS',
+  description: `PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more.`
+},{
+  name: 'CSS Flexbox',
+  description: `&lt;div id="flexbox-background" class="flexbox-info-container active"&gt;
+  &lt;p&gt;The &lt;code&gt;Flexbox Layout&lt;/code&gt; (Flexible Box) module (currently a W3C Last Call Working Draft) aims at providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic (thus the word "flex").&lt;/p&gt;
+  &lt;p&gt;The main idea behind the flex layout is to give the container the ability to alter its items' width/height (and order) to best fill the available space (mostly to accommodate to all kind of display devices and screen sizes). A flex container expands items to fill available free space, or shrinks them to prevent overflow.&lt;/p&gt;
+  &lt;p&gt;Most importantly, the flexbox layout is direction-agnostic as opposed to the regular layouts (block which is vertically-based and inline which is horizontally-based). While those work well for pages, they lack flexibility (no pun intended) to support large or complex applications (especially when it comes to orientation changing, resizing, stretching, shrinking, etc.). &lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Flexbox layout is most appropriate to the components of an application, and small-scale layouts, while the &lt;a href="http://css-tricks.com/snippets/css/complete-guide-grid/"&gt;Grid&lt;/a&gt; layout is intended for larger scale layouts.
+  &lt;/p&gt;&lt;/div&gt;`
+},{
+  name: 'CSS Grid Layout',
+  description: `&lt;div id="grid-introduction" class="flexbox-info-container active"&gt;
+  &lt;p&gt;CSS Grid Layout (aka "Grid"), is a two-dimensional grid-based layout system that aims to do nothing less than completely change the way we design grid-based user interfaces. CSS has always been used to lay out our web pages, but it's never done a very good job of it. First we used tables, then floats, positioning and inline-block, but all of these methods were essentially hacks and left out a lot of important functionality (vertical centering, for instance). Flexbox helped out, but it's intended for simpler one-dimensional layouts, not complex two-dimensional ones (Flexbox and Grid actually work very well together). Grid is the very first CSS module created specifically to solve the layout problems we've all been hacking our way around for as long as we've been making websites.&lt;/p&gt;
+  &lt;p&gt;There are two primary things that inspired me to create this guide. The first is Rachel Andrew's awesome book &lt;a href="http://abookapart.com/products/get-ready-for-css-grid-layout"&gt;Get Ready for CSS Grid Layout.&lt;/a&gt; It's a thorough, clear introduction to Grid and is the basis of this entire article. I &lt;em&gt;highly&lt;/em&gt; encourage you to buy it and read it. My other big inspiration is Chris Coyier's &lt;a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"&gt;A Complete Guide to Flexbox&lt;/a&gt;, which has been my go-to resource for everything flexbox. It's helped a ton of people, evident by the fact that it's the top result when you Google "flexbox." You'll notice many similarities between his post and mine, because why not steal from the best?&lt;/p&gt;
+  &lt;p&gt;My intention with this guide is to present the Grid concepts as they exist in the very latest version of the specification. So I won't be covering the out of date IE syntax, and I'll do my best to update this guide regularly as the spec matures.&lt;/p&gt;
+  &lt;/div&gt;`
+},{
+  name: 'Bootstrap 3/4',
+  description: `&lt;div id="main"&gt;
+&lt;h2&gt;What is Bootstrap?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Bootstrap is a free front-end framework for faster and easier web development&lt;/li&gt;
+&lt;li&gt;Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins&lt;/li&gt;
+&lt;li&gt;Bootstrap also gives you the ability to easily create responsive designs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="w3-panel w3-note"&gt;
+&lt;p&gt;&lt;b&gt;What is Responsive Web Design?&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+Responsive web design is about creating web sites which automatically adjust 
+themselves to look good on all devices, from small phones to large desktops.&lt;/p&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&nbsp;
+&lt;h2&gt;Bootstrap History&lt;/h2&gt;
+&lt;p&gt;Bootstrap was developed by Mark Otto and Jacob Thornton at Twitter, and released as an open source product in August 2011 on GitHub.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;In June 2014 Bootstrap was the No.1 project on GitHub!&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&nbsp;
+&lt;h2&gt;Why Use Bootstrap?&lt;/h2&gt;
+&lt;p&gt;Advantages of Bootstrap:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Easy to use:&lt;/strong&gt; Anybody with just basic knowledge of HTML and CSS can start using Bootstrap&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Responsive features:&lt;/strong&gt; Bootstrap's responsive CSS adjusts to phones, tablets, and desktops&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile-first approach:&lt;/strong&gt; In Bootstrap 3, mobile-first styles are part of the core framework&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Browser compatibility:&lt;/strong&gt; Bootstrap is compatible with all modern browsers (Chrome, Firefox, Internet Explorer, Safari, and Opera)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;`
+},{
+  name: 'ZURB Foundation',
+  description: `&lt;strong&gt;Foundation has its roots in the ZURB style guide&lt;/strong&gt;, a collection of HTML, CSS and Javascript that helped us quickly design amazing websites. It’s now used by millions of designers and developers and powering some of the biggest and most popular sites on the web. Here’s the story of how Foundation became the most advanced responsive front-end framework in the world.`
+},{
+  name: 'Material Design',
+  description: `Develop a single underlying system that allows for a unified experience across platforms and device sizes. Mobile precepts are fundamental, but touch, voice, mouse, and keyboard are all ﬁrst-class input methods.
+    &lt;h1&gt;&lt;a href="https://material.io/guidelines/#introduction-principles" target="blank"&gt;Material Design&lt;/a&gt;&lt;/h1&gt;
+  `
+},{
+  name: 'TypeScript',
+  description: `&lt;p&gt;TypeScript is a strongly-typed superset of JavaScript, which means it adds some syntactical benefits to the language while still letting you write normal JavaScript if you want to. It encourages a more declarative style of programming through things like interfaces and static typing (more on these later), offers modules and classes, and most importantly, integrates relatively well with popular JavaScript libraries and code. You could think of it as a strongly static layer over current JavaScript that has a few features to make life (and debugging especially) a bit more bearable.&lt;/p&gt;&lt;p&gt;The reason it’s gained such attention of late, though, is largely because it’s been selected for full support by the upcoming Angular 2 (which is also written in TypeScript itself). It’s also developed by Microsoft, which means it has the backing of two major tech companies (not a bad place for any language). This means that we’ll probably be seeing a lot more about it in the months and years to come, and it will likely gain even more of a following and mainstream status in that time.&lt;/p&gt;`
+},{
+  name: 'ES6/ES7/ESnext',
+  description: `ES6 is the next specification for JavaScript, and it's finally started to appear in a major way in browsers and on servers thanks to Node.js 5.`
+},{
+  name: 'NPM',
+  description: `&lt;div id="page"&gt;
+  &lt;!--
+title: 01 - What is npm?
+featured: true
+--&gt;
+&lt;h1&gt;&lt;a id="what-is-npm" class="deep-link" href="#what-is-npm"&gt;&lt;svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"&gt;&lt;path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;What is npm?&lt;/h1&gt;
+&lt;p&gt;npm makes it easy for JavaScript developers to share and reuse code, and it makes it easy to update the code that you're sharing.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;If you've been working with JavaScript for a while, you might have heard of npm. npm makes it easy for JavaScript developers to share the code that they've created to solve particular problems, and for other developers to reuse that code in their own applications.&lt;/p&gt;
+&lt;p&gt;Once you're depending on this code from other developers, npm makes it easy to check to see if they've made any updates to it and to download those updates when they're made.&lt;/p&gt;
+&lt;p&gt;These bits of reusable code are called packages or modules. A package is just a directory with one or more files in it, along with a file called "package.json" that contains metadata about the package. A typical application, such as a website, will depend on dozens or hundreds of packages. These packages are often small; the general idea is that you create a small building block which solves one problem well. This makes it possible for you to compose larger custom solutions out of these small building blocks.&lt;/p&gt;
+&lt;p&gt;There's lots of benefits to this; it makes it possible for your team to draw on expertise outside of your organization by bringing in packages from people who have focused on particular problem areas. Even if you don't reuse code from people outside of your organization, using this kind of module-based approach can help your team work together better and make it possible to reuse code across projects.&lt;/p&gt; 
+&lt;p&gt;You can find packages to help you build your application by browsing the npm website. When you're browsing the website, you'll find lots of Node modules. npm started as the Node package manager, so you'll find lots of modules which can be used on the server side. There are also lots of packages which add commands for you to use in the command line. You'll also find packages which can be used on the front end.&lt;/p&gt;
+&lt;p&gt;npm is made up of three distinct pieces: the website, the registry, and the CLI. The website serves as the primary tool for users to discover packages, the registry is a large database of information about packages, and the CLI is how developers publish their packages on the registry or download packages they wish to install. &lt;/p&gt;
+&lt;p&gt;npm is a way to reuse code from other developers, and also a way to share your code with them, and it makes it easy to manage the different versions of code.&lt;/p&gt;
+&lt;/div&gt;`
+},{
+  name: 'Webpack 2.x/3.x',
+  description: `test`
+},{
+  name: 'AngularJs',
+  description: `&lt;div ng-hide="loading" ng-include="partialPath" toc-collector="" autoscroll="" class="ng-scope"&gt;&lt;a href="https://github.com/angular/angular.js/edit/master/docs/content/guide/introduction.ngdoc?message=docs(guide%2FIntroduction)%3A%20describe%20your%20change..." class="improve-docs btn btn-primary ng-scope"&gt;&lt;i class="glyphicon glyphicon-edit"&gt;&amp;nbsp;&lt;/i&gt;Improve this Doc&lt;/a&gt;
+  
+  
+  &lt;h1 id="what-is-angularjs-" class="ng-scope"&gt;What Is AngularJS?&lt;/h1&gt;
+  &lt;p class="ng-scope"&gt;AngularJS is a structural framework for dynamic web apps. It lets you use HTML as your template
+  language and lets you extend HTML's syntax to express your application's components clearly and
+  succinctly. AngularJS's data binding and dependency injection eliminate much of the code you
+  would otherwise have to write. And it all happens within the browser, making it
+  an ideal partner with any server technology.&lt;/p&gt;
+  &lt;p class="ng-scope"&gt;AngularJS is what HTML would have been, had it been designed for applications. HTML is a great
+  declarative language for static documents. It does not contain much in the way of creating
+  applications, and as a result building web applications is an exercise in &lt;em&gt;what do I have to do
+  to trick the browser into doing what I want?&lt;/em&gt;&lt;/p&gt;
+  &lt;p class="ng-scope"&gt;The impedance mismatch between dynamic applications and static documents is often solved with:&lt;/p&gt;
+  &lt;ul class="ng-scope"&gt;
+  &lt;li&gt;&lt;strong&gt;a library&lt;/strong&gt; - a collection of functions which are useful when writing web apps. Your code is
+  in charge and it calls into the library when it sees fit. E.g., &lt;code&gt;&lt;span class="pln"&gt;jQuery&lt;/span&gt;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;frameworks&lt;/strong&gt; - a particular implementation of a web application, where your code fills in
+  the details. The framework is in charge and it calls into your code when it needs something
+  app specific. E.g., &lt;code&gt;&lt;span class="pln"&gt;durandal&lt;/span&gt;&lt;/code&gt;, &lt;code&gt;&lt;span class="pln"&gt;ember&lt;/span&gt;&lt;/code&gt;, etc.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p class="ng-scope"&gt;AngularJS takes another approach. It attempts to minimize the impedance mismatch between document
+  centric HTML and what an application needs by creating new HTML constructs. AngularJS teaches the
+  browser new syntax through a construct we call &lt;em&gt;directives&lt;/em&gt;. Examples include:&lt;/p&gt;
+  &lt;ul class="ng-scope"&gt;
+  &lt;li&gt;Data binding, as in &lt;code&gt;&lt;span class="pun"&gt;{{}}&lt;/span&gt;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;DOM control structures for repeating, showing and hiding DOM fragments.&lt;/li&gt;
+  &lt;li&gt;Support for forms and form validation.&lt;/li&gt;
+  &lt;li&gt;Attaching new behavior to DOM elements, such as DOM event handling.&lt;/li&gt;
+  &lt;li&gt;Grouping of HTML into reusable components.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h2 id="a-complete-client-side-solution" class="ng-scope"&gt;A complete client-side solution&lt;/h2&gt;
+  &lt;p class="ng-scope"&gt;AngularJS is not a single piece in the overall puzzle of building the client-side of a web
+  application. It handles all of the DOM and AJAX glue code you once wrote by hand and puts it in a
+  well-defined structure. This makes AngularJS opinionated about how a CRUD (Create, Read, Update, Delete)
+  application should be built. But while it is opinionated, it also tries to make sure that its opinion
+  is just a starting point you can easily change. AngularJS comes with the following out-of-the-box:&lt;/p&gt;
+  &lt;ul class="ng-scope"&gt;
+  &lt;li&gt;Everything you need to build a CRUD app in a cohesive set: Data-binding, basic templating
+  directives, form validation, routing, deep-linking, reusable components and dependency injection.&lt;/li&gt;
+  &lt;li&gt;Testability story: Unit-testing, end-to-end testing, mocks and test harnesses.&lt;/li&gt;
+  &lt;li&gt;Seed application with directory layout and test scripts as a starting point.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h2 id="angularjs-s-sweet-spot" class="ng-scope"&gt;AngularJS's sweet spot&lt;/h2&gt;
+  &lt;p class="ng-scope"&gt;AngularJS simplifies application development by presenting a higher level of abstraction to the
+  developer. Like any abstraction, it comes at a cost of flexibility. In other words, not every app
+  is a good fit for AngularJS. AngularJS was built with the CRUD application in mind. Luckily CRUD
+  applications represent the majority of web applications. To understand what AngularJS is
+  good at, though, it helps to understand when an app is not a good fit for AngularJS.&lt;/p&gt;
+  &lt;p class="ng-scope"&gt;Games and GUI editors are examples of applications with intensive and tricky DOM manipulation.
+  These kinds of apps are different from CRUD apps, and as a result are probably not a good fit for AngularJS.
+  In these cases it may be better to use a library with a lower level of abstraction, such as &lt;code&gt;&lt;span class="pln"&gt;jQuery&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
+  &lt;h1 id="the-zen-of-angularjs" class="ng-scope"&gt;The Zen of AngularJS&lt;/h1&gt;
+  &lt;p class="ng-scope"&gt;AngularJS is built around the belief that declarative code is better than imperative when it comes
+  to building UIs and wiring software components together, while imperative code is excellent for
+  expressing business logic.&lt;/p&gt;
+  &lt;ul class="ng-scope"&gt;
+  &lt;li&gt;It is a very good idea to decouple DOM manipulation from app logic. This dramatically improves
+  the testability of the code.&lt;/li&gt;
+  &lt;li&gt;It is a really, &lt;em&gt;really&lt;/em&gt; good idea to regard app testing as equal in importance to app
+  writing. Testing difficulty is dramatically affected by the way the code is structured.&lt;/li&gt;
+  &lt;li&gt;It is an excellent idea to decouple the client side of an app from the server side. This
+  allows development work to progress in parallel, and allows for reuse of both sides.&lt;/li&gt;
+  &lt;li&gt;It is very helpful indeed if the framework guides developers through the entire journey of
+  building an app: From designing the UI, through writing the business logic, to testing.&lt;/li&gt;
+  &lt;li&gt;It is always good to make common tasks trivial and difficult tasks possible.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p class="ng-scope"&gt;AngularJS frees you from the following pains:&lt;/p&gt;
+  &lt;ul class="ng-scope"&gt;
+  &lt;li&gt;&lt;strong&gt;Registering callbacks:&lt;/strong&gt; Registering callbacks clutters your code, making it hard to see the
+  forest for the trees. Removing common boilerplate code such as callbacks is a good thing. It
+  vastly reduces the amount of JavaScript coding &lt;em&gt;you&lt;/em&gt; have to do, and it makes it easier to see
+  what your application does.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Manipulating HTML DOM programmatically:&lt;/strong&gt; Manipulating HTML DOM is a cornerstone of AJAX
+  applications, but it's cumbersome and error-prone. By declaratively describing how the UI
+  should change as your application state changes, you are freed from low-level DOM manipulation
+  tasks. Most applications written with AngularJS never have to programmatically manipulate the
+  DOM, although you can if you want to.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Marshaling data to and from the UI:&lt;/strong&gt; CRUD operations make up the majority of AJAX
+  applications' tasks. The flow of marshaling data from the server to an internal object to an HTML
+  form, allowing users to modify the form, validating the form, displaying validation errors,
+  returning to an internal model, and then back to the server, creates a lot of boilerplate
+  code. AngularJS eliminates almost all of this boilerplate, leaving code that describes the
+  overall flow of the application rather than all of the implementation details.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Writing tons of initialization code just to get started:&lt;/strong&gt; Typically you need to write a lot
+  of plumbing just to get a basic "Hello World" AJAX app working. With AngularJS you can bootstrap
+  your app easily using services, which are auto-injected into your application in a
+  &lt;a href="https://github.com/google/guice"&gt;Guice&lt;/a&gt;-like dependency-injection style. This allows you
+  to get started developing features quickly. As a bonus, you get full control over the
+  initialization process in automated tests.&lt;/li&gt;
+  &lt;/ul&gt;
+  
+  
+  &lt;/div&gt;`
+},{
+  name: 'Angular, Angular 2, Angular x.x',
+  description: `test`
+},{
+  name: 'Vue.js',
+  description: `test`
+},{
+  name: 'D3.js',
+  description: `test`
+},{
+  name: 'SPA',
+  description: `&lt;div class="mv-guide"&gt;
+  &lt;div class="mbm"&gt;
+  &lt;img class="mv-guide-badge" width="169.0" src="/assets/custom/beginners-guide/badge-single-page-applications-955506d7ed6bfc348e8c930f0dbb9fa8ddda72e8e849c94dd58a2090a56c4175.svg" alt="Badge single page applications"&gt;
+  &lt;/div&gt;
+  &lt;div class="mbl tac"&gt;
+  &lt;h1 class="h h--1 ts48px--m th115 twb"&gt;Single-page Applications&lt;/h1&gt;
+  &lt;p class="mbf tcs tss"&gt;
+  &lt;i class="icn icn--clock"&gt;&lt;/i&gt;
+  7 minute read
+  &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="mv-guide-content"&gt;
+  &lt;p&gt;The term “single-page application” (or SPA) is usually used to describe applications that were built for the web. These applications are accessed via a web browser like other websites, but offer more dynamic interactions resembling native mobile and desktop apps.&lt;/p&gt;
+  
+  &lt;p&gt;The most notable difference between a regular website and an SPA is the reduced amount of page refreshes. SPAs have a heavier usage of AJAX — a way to communicate with back-end servers without doing a full page refresh — to get data loaded into our application. As a result, the process of rendering pages happens mostly on the client-side.&lt;/p&gt;
+  
+  &lt;h2&gt;Single-page App Cons&lt;/h2&gt;
+  
+  &lt;p&gt;While building SPAs is trendy and considered a modern development practice, it’s important to be aware of its cons, including:&lt;/p&gt;
+  
+  &lt;ul&gt;
+  &lt;li&gt;The browser does most of the heavy lifting, which means performance can be a problem — especially on less capable mobile devices.&lt;/li&gt;
+  &lt;li&gt;Careful thought must be put into search engine optimization (SEO) so your content can be discoverable by search engines and social media websites that provide a link preview.&lt;/li&gt;
+  &lt;/ul&gt;
+  
+  &lt;h3&gt;Mitigating Cons With Server-side Rendering&lt;/h3&gt;
+  
+  &lt;p&gt;Most modern JavaScript frameworks are working on ways to handle server-side rendering of SPAs — meaning the user would get a fully populated page when the SPA is loaded for the first time, instead of, for example, seeing a loading indicator.&lt;/p&gt;
+  
+  &lt;p&gt;Server-side rendering can alleviate some of the burden browsers have to go through when rendering pages, and will also help with the problem of SEO and content discoverability.&lt;/p&gt;
+  
+  &lt;h2&gt;Popular JavaScript Frameworks for Building SPAs&lt;/h2&gt;
+  
+  &lt;p&gt;The more interactivity that happens on the client-side, the more JavaScript code is needed to make those interactive pieces function well. And the more code is written, the more important it is to have a clean and well-architected codebase. And this is exactly the problem JavaScript frameworks help solve — each with its own approach.&lt;/p&gt;
+  
+  &lt;p&gt;There are a lot of open source JavaScript frameworks that help with building SPAs, such as:&lt;/p&gt;
+  
+  &lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://angular.io/"&gt;Angular&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://facebook.github.io/react/"&gt;React&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://emberjs.com/"&gt;Ember&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://aurelia.io/"&gt;Aurelia&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://vuejs.org/"&gt;Vue.js&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://cycle.js.org/"&gt;Cycle.js&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://backbonejs.org/"&gt;Backbone&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  
+  &lt;p&gt;The list could go on and on — but let’s dive a bit more into the first two here: Angular and React.&lt;/p&gt;
+  
+  &lt;h2&gt;Angular&lt;/h2&gt;
+  
+  &lt;p&gt;Angular is a front-end framework built to ease the burden of writing complex apps while keeping everything testable and organized. The first version of Angular was created back in 2009, and it was way ahead of its time. When Angular was first written, it solved a lot of problems that have now been fixed at the JavaScript language level with the release of ES2015. While Angular 1 had to create its own solution for modules, for instance, ES2015 now provides a solution to JavaScript modules right at the language level.&lt;/p&gt;
+  
+  &lt;p&gt;With inadequacies like this in mind, the Angular team at Google rewrote the framework from scratch. The new and improved version of Angular (known as Angular 2) is very promising. Angular’s overall proposition has not changed: It provides a holistic solution to writing apps. Built right into the framework is a way to do application routing, communicating with web servers, and more. You won’t need any extra packages to get a basic but fully functioning web app up and running.&lt;/p&gt;
+  
+  &lt;p&gt;Angular also provides a whole ecosystem (&lt;a href="https://cli.angular.io/"&gt;Angular CLI&lt;/a&gt;) for actually building apps that includes a tool to scaffold applications, as well as a solution for building mobile web apps with performance in mind as a first-class citizen (&lt;a href="https://mobile.angular.io/"&gt;Angular Mobile&lt;/a&gt;).&lt;/p&gt;
+  
+  &lt;h2&gt;React&lt;/h2&gt;
+  
+  &lt;p&gt;React is not considered a framework, per se — rather, it touts itself as a view library. But don’t let that fool you, as React was built to solve user interface problems at a very large scale.&lt;/p&gt;
+  
+  &lt;p&gt;React was pretty disruptive when it was first announced. The idea of “Rethinking Best Practices” was attached to it with good reason — React’s proposition was very different than the trends the rest of the JavaScript community was moving toward at the time. While other framework authors were focusing on applying the MVC pattern to writing apps and having a clear separation of code associated to the view and other parts of the application, React proposed coupling those together and simplifying the code by means of composition and other functional paradigms through components.&lt;/p&gt;
+  
+  &lt;p&gt;In the time since React was released, other popular frameworks, such as Angular and Ember, have also moved toward a more component-based architecture, as well as applied similar ideas React brought to light, such as the virtual DOM, which is how React applies changes to the view.&lt;/p&gt;
+  
+  &lt;p&gt;React’s overall approach to building apps is different than Angular and Ember because it is just a view library — it does not provide a way to do client-side routing or even a way to load data from a back-end server bundled with the library. This means that to get a simple yet fully functioning app (that needs these missing features) to work, you will need to look into other libraries that are not maintained by the same Facebook core team that maintains React.&lt;/p&gt;
+  
+  &lt;p&gt;Don’t be intimidated by the idea of relying on outside libraries, though. There are many popular community-backed libraries that have even been adopted by teams inside of Facebook, including &lt;a href="https://github.com/reactjs/react-router"&gt;react-router&lt;/a&gt;, which provides a way to client-side routing; &lt;a href="https://github.com/mzabriskie/axios"&gt;axios&lt;/a&gt;, which has a system to make AJAX calls that easily integrate into React apps; and &lt;a href="http://redux.js.org/"&gt;redux&lt;/a&gt;, which is a state container that helps developers handle the flow of data in React apps.&lt;/p&gt;
+  
+  &lt;h2&gt;Finding the Right Framework for You&lt;/h2&gt;
+  
+  &lt;p&gt;There are ongoing flame wars online about which is the best framework for building apps. Indeed, each has its own strengths and weaknesses, which we will not get into in this chapter. They all, however, have one thing in common: JavaScript.&lt;/p&gt;
+  
+  &lt;p&gt;And that’s what we recommend: Learn JavaScript and its modern ecosystem well. Adopt &lt;a href="https://nodejs.org/en/"&gt;Node.js&lt;/a&gt;, even for your client-side development, as it will bring a lot of good tooling to help &lt;a href="https://webpack.github.io/"&gt;bundle your code&lt;/a&gt;, run &lt;a href="http://eslint.org/"&gt;linters&lt;/a&gt; to avoid common syntax mistakes, &lt;a href="https://mochajs.org/"&gt;run unit tests&lt;/a&gt;, and more. Once you’ve adopted Node.js, be sure to bring all your dependencies in through &lt;a href="https://www.npmjs.com/"&gt;NPM&lt;/a&gt;, including your CSS dependencies, such as &lt;a href="http://fontawesome.io/"&gt;Font Awesome&lt;/a&gt;, &lt;a href="http://getbootstrap.com/"&gt;Twitter Bootstrap&lt;/a&gt;, etc. Adopt &lt;a href="https://www.codeschool.com/courses/es2015-the-shape-of-javascript-to-come"&gt;ES2015&lt;/a&gt; (also known as ES6) and all its latest features through &lt;a href="https://babeljs.io/"&gt;Babel&lt;/a&gt;, which transpiles ES6 code back to ES5 JavaScript code that browsers can understand, since they haven’t been fully upgraded to support the latest features of JavaScript yet. Also, if you are a fan of strict typed languages, then be sure to look into &lt;a href="https://github.com/facebook/flow"&gt;Flow&lt;/a&gt; and/or &lt;a href="https://www.typescriptlang.org/"&gt;TypeScript&lt;/a&gt;.&lt;/p&gt;
+  
+  &lt;p&gt;Once you’ve gotten a hang of tooling and the JavaScript ecosystem, and have identified which parts you like the most, pick a framework that fits your choice. Ultimately, the each framework’s goal is the same: building an awesome app. So it will be up to you to figure out if you want, for example, a more object-oriented or a more functional approach when building apps.&lt;/p&gt;
+  
+  &lt;p&gt;You’ll also have to decide how much control you want over your application’s architecture. If you want to make most of the architecture decisions yourself, then you might be more interested in bringing different libraries together, which is more compatible with how React works. But if you prefer to have most decisions made for you, and you’re okay with giving up a bit of flexibility, then maybe Angular or Ember will be the best choice, as they both provide more opinionated ways of writing your app right out of the box.&lt;/p&gt;
+  
+  &lt;p&gt;Ultimately, there is no wrong or right answer when choosing your JavaScript framework and tooling of choice, so it is up to you to figure out what works best in your situation, depending on your level of experience, how much flexibility your job provides, how much code is already written, and other factors.&lt;/p&gt;
+  
+  &lt;/div&gt;
+  &lt;div class="mtl"&gt;
+  &lt;ul class="list iconList tac"&gt;
+  &lt;li class="iconList-item iconList-item--label"&gt;Share on:&lt;/li&gt;
+  &lt;li class="iconList-item" data-share-hashtags="" data-share-service="twitter" data-share-text="Single-page Applications by @codeschool"&gt;
+  &lt;a class="iconList-item-link js-share" data-segment-click="User Share" data-segment-properties="{&amp;quot;service&amp;quot;:&amp;quot;Twitter&amp;quot;}" href="https://www.codeschool.com/beginners-guide-to-web-development/single-page-applications"&gt;&lt;b class="srt"&gt;Twitter&lt;/b&gt;
+  &lt;i class="icn icn--twitter iconList-item-icn"&gt;&lt;/i&gt;
+  &lt;/a&gt;&lt;/li&gt;
+  &lt;li class="iconList-item" data-share-service="facebook"&gt;
+  &lt;a class="iconList-item-link js-share" data-segment-click="User Share" data-segment-properties="{&amp;quot;service&amp;quot;:&amp;quot;Facebook&amp;quot;}" href="https://www.codeschool.com/beginners-guide-to-web-development/single-page-applications"&gt;&lt;b class="srt"&gt;Facebook&lt;/b&gt;
+  &lt;i class="icn icn--facebook iconList-item-icn"&gt;&lt;/i&gt;
+  &lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  
+  &lt;/div&gt;
+  &lt;/div&gt;`
+},{
+  name: 'React/Redux',
+  description: `test`
+},{
+  name: 'Angular/Redux',
+  description: `test`
+},{
+  name: 'Jasmine',
+  description: `test`
+},{
+  name: 'Karma',
+  description: `&lt;div class="container"&gt;
+  &lt;div class="sixteen columns bottom"&gt;
+    &lt;p class="bold large center"&gt;Things should be simple. We believe in testing and so we want to make it as simple as possible.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="sixteen columns bottom"&gt;
+    &lt;p class="center"&gt;&lt;/p&gt;&lt;p&gt;The main goal for Karma is to bring a productive testing
+environment to developers. The environment being one where they don't have
+to set up loads of configurations, but rather a place where developers can just write the
+code and get instant feedback from their tests. Because getting quick feedback is what makes you
+productive and &lt;a href="http://vimeo.com/36579366"&gt;creative&lt;/a&gt;.&lt;/p&gt;
+&nbsp;
+    &lt;p&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="clearfix"&gt;&lt;/div&gt;
+  &lt;div class="our-services"&gt;
+    &lt;ul&gt;
+      &lt;li class="one-third column"&gt;
+        &lt;div class="icon-box"&gt;&lt;i class="icon-mobile-phone icon-2x"&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;h3&gt;Test on Real Devices&lt;/h3&gt;
+        &lt;p&gt;
+          Test your code on real browsers and real devices such as phones,
+          tablets or on a headless PhantomJS instance.
+        &lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li class="one-third column"&gt;
+        &lt;div class="icon-box"&gt;&lt;i class="icon-resize-small icon-2x"&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;h3&gt;Remote Control&lt;/h3&gt;
+        &lt;p&gt;
+          Control the whole workflow from the command line or your IDE -
+          just save a file and Karma will run all the tests.
+        &lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li class="one-third column"&gt;
+        &lt;div class="icon-box"&gt;&lt;i class="icon-globe icon-2x"&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;h3&gt;Testing Framework Agnostic&lt;/h3&gt;
+        &lt;p&gt;&lt;/p&gt;&lt;p&gt;Describe your tests with &lt;a href="http://jasmine.github.io/"&gt;Jasmine&lt;/a&gt;,
+&lt;a href="http://mochajs.org/"&gt;Mocha&lt;/a&gt;,
+&lt;a href="http://qunitjs.com/"&gt;QUnit&lt;/a&gt;, or write a simple adapter for any framework you like.&lt;/p&gt;
+&nbsp;
+        &lt;p&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li class="one-third column last"&gt;
+        &lt;div class="icon-box"&gt;&lt;i class="icon-group icon-2x"&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;h3&gt;Open Source&lt;/h3&gt;
+        &lt;p&gt;&lt;/p&gt;&lt;p&gt;Developed for and maintained by the open source community at &lt;a href="https://github.com/karma-runner/karma"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&nbsp;
+        &lt;p&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li class="one-third column last"&gt;
+        &lt;div class="icon-box"&gt;&lt;i class="icon-magic icon-2x"&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;h3&gt;Easy Debugging&lt;/h3&gt;
+        &lt;p&gt;Easy debugging directly from your IDE via WebStorm or Google Chrome.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li class="one-third column last"&gt;
+        &lt;div class="icon-box"&gt;&lt;i class="icon-refresh icon-2x"&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;h3&gt;Continuous Integration&lt;/h3&gt;
+        &lt;p&gt;&lt;/p&gt;&lt;p&gt;Simple integration with &lt;a href="plus/jenkins.html"&gt;Jenkins&lt;/a&gt;,
+&lt;a href="plus/travis.html"&gt;Travis&lt;/a&gt; or
+&lt;a href="plus/semaphore.html"&gt;Semaphore&lt;/a&gt;.&lt;/p&gt;
+&nbsp;
+        &lt;p&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;`
+},{
+  name: 'Jest',
+  description: `test`
+},{
+  name: 'Mocha',
+  description: `Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun. Mocha tests run serially, allowing for flexible and accurate reporting, while mapping uncaught exceptions to the correct test cases`
+},{
+  name: 'Enzyme',
+  description: `Enzyme is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components' output.`
+},{
+  name: 'phantom.js',
+  description: `test`
+},{
+  name: 'webdriver.io',
+  description: `test`
+},{
+  name: 'Express.js',
+  description: `test`
+},{
+  name: 'REST API',
+  description: `test`
+},{
+  name: 'Docker',
+  description: `test`
+},{
+  name: 'MongoDB',
+  description: `test`
+},{
+  name: 'ChromeDevTools',
+  description: `test`
+},{
+  name: 'Visual Studio Code',
+  description: `test`
+},{
+  name: 'Webstorm',
+  description: `test`
+},{
+  name: 'Git',
+  description: `test`
+},{
+  name: 'Server Side Rendering',
+  description: `test`
+}]</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Feb 19 2018 14:59:55 GMT+0200 (EET)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

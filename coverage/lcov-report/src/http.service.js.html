@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/http.service.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">src</a> http.service.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/17</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import reques<span class="cstat-no" title="statement not covered" >t from 'superagent'<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span>
+&nbsp;
+class Http {
+<span class="fstat-no" title="function not covered" >  co</span>nstructor(request) {
+<span class="cstat-no" title="statement not covered" >    this.request = request;</span>
+  }
+&nbsp;
+  // -----------------------------------------
+  // Http Request Methods
+  // -----------------------------------------
+&nbsp;
+  // { query: 'Manny', range: '1..5', order: 'desc' }
+<span class="fstat-no" title="function not covered" >  ge</span>t(url, query = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+<span class="cstat-no" title="statement not covered" >    return this.request</span>
+      .get(url)
+      // .set('Bearer', token)
+      .set('Content-Type', 'application/json')
+      .timeout({
+        response: 5000,                                                                 // Wait 5 seconds for the server to start sending,
+        deadline: 60000,                                                                // but allow 1 minute for the file to finish loading.
+      })
+      .query(query)
+      .on('error', this.errorHandler)
+      .on('progress<span class="fstat-no" title="function not covered" >',</span> event =&gt; {
+        // console.log(event)
+      })
+      .<span class="fstat-no" title="function not covered" >ok</span>(res <span class="cstat-no" title="statement not covered" >=&gt; res.status === 2</span>00)
+      .th<span class="fstat-no" title="function not covered" >en</span>(response =&gt; {
+<span class="cstat-no" title="statement not covered" >        return response.body</span>;
+      })
+  }
+&nbsp;
+  // {"name":"tj","pet":"tobi"}
+<span class="fstat-no" title="function not covered" >  po</span>st(url, query = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+<span class="cstat-no" title="statement not covered" >    return this.request</span>
+      .post(url)
+      // .set('Bearer', token)
+      .set('Content-Type', 'application/json')
+      .timeout({
+        response: 5000,                                                                 // Wait 5 seconds for the server to start sending,
+        deadline: 60000,                                                                // but allow 1 minute for the file to finish loading.
+      })
+      .send(query)
+      .on('error', this.errorHandler)
+      .on('progress<span class="fstat-no" title="function not covered" >',</span> event =&gt; {
+        // console.log(event)
+      })
+      .<span class="fstat-no" title="function not covered" >ok</span>(res <span class="cstat-no" title="statement not covered" >=&gt; res.status === 2</span>00)
+      .th<span class="fstat-no" title="function not covered" >en</span>(response =&gt; {
+<span class="cstat-no" title="statement not covered" >        return response.body</span>;
+      })
+  }
+&nbsp;
+  // { id: id }
+<span class="fstat-no" title="function not covered" >  de</span>lete(url, query = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+<span class="cstat-no" title="statement not covered" >    return this.request</span>
+      .del(url)
+      .timeout({
+        response: 5000,                                                                 // Wait 5 seconds for the server to start sending,
+        deadline: 60000,                                                                // but allow 1 minute for the file to finish loading.
+      })
+      .send(query)
+      .on('error', this.errorHandler)
+      .<span class="fstat-no" title="function not covered" >ok</span>(res <span class="cstat-no" title="statement not covered" >=&gt; res.status === 2</span>00)
+      .th<span class="fstat-no" title="function not covered" >en</span>(response =&gt; {
+<span class="cstat-no" title="statement not covered" >        return response.body</span>;
+      })
+  }
+&nbsp;
+  // -----------------------------------------
+  // Error Handler
+  // -----------------------------------------
+&nbsp;
+<span class="fstat-no" title="function not covered" >  er</span>rorHandler(err) {
+<span class="cstat-no" title="statement not covered" >    if (err.timeout) {</span>
+<span class="cstat-no" title="statement not covered" >      return 'timed out!';</span>
+    } else <span class="cstat-no" title="statement not covered" >if (err.status === 404) {</span>
+<span class="cstat-no" title="statement not covered" >      return 'oh no ' + err.body.message;</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      return 'error';</span>
+      // all other error types we handle generically
+    }
+  }<span class="cstat-no" title="statement not covered" ></span>
+}
+&nbsp;
+export default new Http(request);</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Feb 19 2018 14:50:23 GMT+0200 (EET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
