@@ -44,7 +44,7 @@ class Header extends Component {
             </li>
           </ul>
 
-          <Button color="link" class="text-white" onClick={this.click}>LogOut</Button>
+          <Button color="link" class="text-white" id="logout" onClick={this.click}>LogOut</Button>
         </div>
       </div>
     </nav>

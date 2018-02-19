@@ -13,5 +13,5 @@ export const login = (values) => dispatch => {
 
 export const logout = () => dispatch => {
   localStorage.removeItem('jwtToken')
-  dispatch({ type: LOG_OUT, payload: [] })
+  return dispatch({ type: LOG_OUT, payload: [] })
 }
