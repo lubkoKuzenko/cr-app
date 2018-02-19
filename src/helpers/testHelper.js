@@ -19,7 +19,7 @@ function renderComponent(ComponentClass) {
   return mount(
     <Provider store={store}>
         <Router>
-            <ComponentClass {...props} />
+            <ComponentClass />
         </Router>
     </Provider>,
   );
