@@ -1,8 +1,8 @@
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { Header } from '../components';
-import { mockStore, renderComponent } from '../helpers/testHelper'
+import Header from './header';
+import { mockStore, renderComponent } from '../../helpers/testHelper'
 
 describe('<Header />', () => {
     let component;

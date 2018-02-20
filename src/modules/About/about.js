@@ -43,7 +43,7 @@ export default class About extends Component {
     console.log('lodash.js version: ' + _.VERSION)
     console.log('moment.js version: ' + moment.version)
     return <div>
-      <h1>Modal</h1>
+      <h1 class="modal-title">Modal</h1>
       <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
       <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.buttonLabel}>
         <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
@@ -56,7 +56,7 @@ export default class About extends Component {
         </ModalFooter>
       </Modal>
       <hr/>
-      <h1>Google Map</h1>
+      <h1 class="maps-title">Google Map</h1>
       <hr />
       <GoogleMap
         style={{ width: '100%', height: '400px', position: 'relative' }}
@@ -68,7 +68,7 @@ export default class About extends Component {
         zoom={this.props.zoom}>
       </GoogleMap>
 
-      <h1>Chart (recharts)</h1>
+      <h1 class="charts-title">Chart (recharts)</h1>
       <hr />
 
       <LineChart width={600} height={300} data={this.props.data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>

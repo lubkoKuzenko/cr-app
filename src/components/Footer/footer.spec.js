@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import { Footer } from '../components';
+import { Footer } from './footer';
 
 describe('<Footer />', () => {
     it('renders without crashing', () => {

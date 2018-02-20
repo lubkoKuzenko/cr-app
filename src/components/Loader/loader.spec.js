@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import { Loader } from '../components';
+import { Loader } from './loader';
 
 describe('<Loader />', () => {
     it('renders without crashing', () => {

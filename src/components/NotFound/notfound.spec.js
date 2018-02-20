@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import { NotFound } from '../components';
+import { NotFound } from './notfound';
 
 describe('<NotFound />', () => {
     it('renders without crashing', () => {
