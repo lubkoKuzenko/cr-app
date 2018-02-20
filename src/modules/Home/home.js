@@ -18,8 +18,6 @@ class Home extends Component {
   render() {
     const { stack } = this.props;
 
-    console.log(stack)
-
     if (_.isEmpty(stack)) {
       return <div><Loader /></div>;
     }

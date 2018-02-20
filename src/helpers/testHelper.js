@@ -10,19 +10,22 @@ import thunk from 'redux-thunk'
 
 const fetchMock = require('fetch-mock');
 
-function renderComponent(ComponentClass) {
+const middlewares = [thunk];
+const mockStore = configureStore(middlewares);
+
+function renderComponent(ComponentClass, preloadedState, props) {
   /** Redux Mock Store Configuration */
   const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose
-  const enhancer = composeEnhancers(applyMiddleware(thunk))
-  const store = createStore(rootReducer, enhancer)
+  const enhancer = composeEnhancers(applyMiddleware(thunk)),
+        store = createStore(rootReducer, preloadedState, enhancer)
 
   return mount(
     <Provider store={store}>
         <Router>
-            <ComponentClass />
+            <ComponentClass {...props} />
         </Router>
     </Provider>,
   );
 }
 
-export { fetchMock, renderComponent };
+export { mockStore, fetchMock, renderComponent };

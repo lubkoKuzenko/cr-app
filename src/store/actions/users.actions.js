@@ -29,11 +29,11 @@ export const getUsers = () => dispatch => {
   //   })
   // })
 
-  Promise.all([
+  return Promise.all([
     dispatch(doSomething()),
     dispatch(doSomethingElse())
   ]).then((data) => {
-      dispatch({
+      return dispatch({
         type: SAVE_USERS,
         payload: data[0].results
       })
