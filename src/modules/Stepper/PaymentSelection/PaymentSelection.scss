@@ -1,0 +1,18 @@
+.rwt__tab{
+    padding: 2rem 0px !important;
+}
+.rwt__tabpanel h3{
+    margin-top: 0px;
+}
+.rwt__tablist[aria-orientation="vertical"]{
+    border: none !important;
+    width: 50%;
+    
+}
+.rwt__tab[aria-selected='true']{
+    font-weight: bold;
+    background-color: lightcyan;
+    &:focus{
+        background-color: lightcyan
+    }
+}

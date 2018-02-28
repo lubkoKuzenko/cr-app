@@ -42,6 +42,9 @@ class Header extends Component {
             <li class="nav-item">
               <Link class="nav-link" to="/plan">Development Plan</Link>
             </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/stepper">Stepper</Link>
+            </li>
           </ul>
 
           <Button color="link" class="text-white" id="logout" onClick={this.click}>LogOut</Button>

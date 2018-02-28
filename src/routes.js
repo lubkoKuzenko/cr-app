@@ -5,6 +5,7 @@ const modulePath = './modules/';
 const componentsPath = './components/';
 
 const AsyncDevelopmentPlan = asyncComponent(() => import(modulePath + "DevelopmentPlan/plan"));
+const Stepper = asyncComponent(() => import(modulePath + "Stepper/stepper"));
 const AsyncHome = asyncComponent(() => import(modulePath + "Home/home"));
 const AsyncAbout = asyncComponent(() => import(modulePath + "About/about"));
 const AsyncUserlist = asyncComponent(() => import(modulePath + "Userlist/userlist"));
@@ -21,6 +22,9 @@ export const routes = [{
 }, {
   path: '/plan',
   component: AsyncDevelopmentPlan
+},{
+  path: '/stepper',
+  component: Stepper
 }, {
   path: '/forms',
   component: AsyncForms,

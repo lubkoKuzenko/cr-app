@@ -1,0 +1,31 @@
+.review-page{
+    position: relative;
+    .summary-info{
+        display: flex;
+        justify-content: space-between;
+        .head{
+            border-bottom: 2px solid gray;
+            h4{
+                color: darkkhaki;
+            }
+            .btn-link{
+                padding: 0px;
+                line-height: 40px;
+                margin-left: 20px;
+            }
+        }
+        .content-item{
+            padding: 10px 0;
+            label{
+                font-size: 12px;
+                display: block;
+                color: lightgray;
+                font-weight: normal;
+            }
+            p{
+                font-size: 20px;
+                display: block;
+            }
+        }
+    }
+}

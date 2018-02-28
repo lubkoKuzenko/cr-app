@@ -9,6 +9,27 @@ import GoogleMap from 'google-map-react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 
+import StepZilla from 'react-stepzilla'
+
+const Step1 = () => {
+  return <div>Step1</div>
+}
+
+const Step2 = () => {
+  return <div>Step2</div>
+}
+
+const Step3 = () => {
+  return <div>Step3</div>
+}
+
+const steps =
+    [
+      {name: 'Step 1', component: <Step1 />},
+      {name: 'Step 2', component: <Step2 />},
+      {name: 'Step 3', component: <Step3 />}
+    ]
+
 export default class About extends Component {
   state = {
     modal: false
@@ -43,6 +64,9 @@ export default class About extends Component {
     console.log('lodash.js version: ' + _.VERSION)
     console.log('moment.js version: ' + moment.version)
     return <div>
+      <div class='step-progress'>
+        <StepZilla steps={steps} startAtStep={0}/>
+      </div>
       <h1 class="modal-title">Modal</h1>
       <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
       <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.buttonLabel}>
